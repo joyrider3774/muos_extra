@@ -1,4 +1,4 @@
-name: Compress and Release
+name: Manual Compress and Release MUXZIP
 
 on:
   workflow_dispatch:
@@ -15,24 +15,16 @@ jobs:
         run: |
           TAG_NAME="release-$(date +'%Y%m%d-%H%M%S')"
           echo "TAG_NAME=$TAG_NAME" >> "$GITHUB_ENV"
-          echo "RELEASE_NAME=Manual Release - $(date +'%Y-%m-%d %H:%M:%S')" >> "$GITHUB_ENV"
+          echo "RELEASE_NAME=Release - $(date +'%Y-%m-%d %H:%M:%S')" >> "$GITHUB_ENV"
 
       - name: Compress contents of each top-level directory
         run: |
           mkdir -p artifacts
-          for dir in */ ; do
-            [ -d "$dir" ] || continue
-            name="${dir%/}"
-            [ "$dir" = "artifacts/" ] && continue
-            (
-              cd "$dir" || exit 1
-              if [ "$(find . -mindepth 1 | wc -l)" -gt 0 ]; then
-                zip -r "../artifacts/${name}.zip" ./*
-                [ -f "artifacts/${name}.zip" ] && mv "../artifacts/${name}.zip" "../artifacts/${name}.muxzip"
-              else
-                echo "Skipping empty directory: $dir"
-              fi
-            )
+          for DIR in */ ; do
+            [ -d "$DIR" ] || continue
+            echo "Packaging '$DIR'"
+            cd "$DIR" && zip -r9 "../artifacts/${DIR%/}.muxzip" ./*
+            echo ""
           done
 
       - name: Prevent accidental artifacts.muxzip
