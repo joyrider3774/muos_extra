@@ -31,7 +31,7 @@ jobs:
           done
 
       - name: Prevent accidental artifacts.muxzip
-        run: rm -f artifacts.muxzip
+        run: rm -f "artifacts/artifacts.muxzip"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
