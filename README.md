@@ -91,3 +91,7 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
 
 * Simple Terminal (`armhf`) - Only for H700 devices currently
 
+* Vircon32 Game Console
+  * Uses Libretro core
+  * Comes with 6 pre-installed games
+    * Thanks to [Joyrider3774](https://joyrider3774.itch.io/)
