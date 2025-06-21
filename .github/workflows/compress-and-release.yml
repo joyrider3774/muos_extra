@@ -1,4 +1,4 @@
-name: Manual Compress and Release MUXZIP
+name: Compress and Release
 
 on:
   workflow_dispatch:
@@ -22,9 +22,8 @@ jobs:
           mkdir -p artifacts
           for DIR in */ ; do
             [ -d "$DIR" ] || continue
-            echo "Packaging '$DIR'"
-            cd "$DIR" && zip -r9 "../artifacts/${DIR%/}.muxzip" ./*
-            echo ""
+            [ "$DIR" = "artifacts/" ] && continue
+            ( cd "$DIR" && zip -r9 "../artifacts/${DIR%/}.muxzip" ./* )
           done
 
       - name: Prevent accidental artifacts.muxzip
