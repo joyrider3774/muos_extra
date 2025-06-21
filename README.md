@@ -30,7 +30,7 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
   * Pet
   * Vic-20
 
-* Console and Computer
+* Console and Computer - Libretro Emulator
   * Amstrad
   * Bandai WonderSwan Color
   * ColecoVision
@@ -57,7 +57,7 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
   * VeMUlator
   * Watara Supervision
 
-* Engine and Runtime
+* Engine and Runtime - Both External and Libretro Emulators
   * Arduboy
   * ChaiLove
   * CHIP-8
@@ -66,7 +66,7 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
   * LowRes NX
   * Lua Engine
   * Onscripter
-  * Pyxel
+  * Pyxel (External)
   * RPG Maker 2000 - 2003
   * TIC-80
   * Uzebox
