@@ -3,32 +3,59 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
 
 ---
 * Arcade - MAME Neo Geo - Libretro Emulator
-  * fb alpha 2012 cps-1
-  * fb alpha 2012 cps-2
-  * fb alpha 2012 cps-3
-  * fb alpha 2012 neo geo
-  * mame 078 plus
-  * mame 139
-  * mame 2000
-  * mame 2003-midway
-  * mame 2003-plus
-  * mame 2010
-  * mame (current)
+  * FB Alpha 2012 CPS-1
+  * FB Alpha 2012 CPS-2
+  * FB Alpha 2012 CPS-3
+  * FB Alpha 2012 Neo Geo
+  * MAME 078 Plus
+  * MAME 139
+  * MAME 2000
+  * MAME 2003 Midway
+  * MAME 2003 Plus
+  * MAME 2010
+  * MAME (current)
 
 * Atari - Libretro Emulator
-  * a800 
-  * a5200
-  * a7800
-  * jaguar
-  * st-ste-tt-falcon
+  * 800 
+  * 5200
+  * 7800
+  * Jaguar
+  * ST-STE-TT-Falcon
 
 * Commodore - Libretro Emulator
-  * amiga (extra)
+  * Amiga (extra)
   * c64
   * c128
-  * cbm-2
-  * pet
-  * vic-20
+  * CBM-2
+  * Pet
+  * Vic-20
+
+* Console and Computer
+* Amstrad
+* Bandai WonderSwan Color
+* ColecoVision
+* Fairchild Channel F
+* Galaksija Retro Computer
+* GCE Vectrex
+* Magnavox Odyssey - VideoPac
+* Mattel Intellivision
+* Mega Duck - Cougar Boy
+* Microsoft MSX
+* NEC PC-8000 - PC-8800 Series
+* NEC PC98
+* NEC PC-FX
+* Nintendo Famicom Disk System
+* Nintendo Pokemon Mini
+* Philips CDi
+* Sharp X1
+* Sharp X68000
+* Sinclair ZX 81
+* Sinclair ZX Spectrum
+* SVI ColecoVision SG1000
+* Texas Instruments TI-83
+* The 3DO Company - 3DO
+* VeMUlator
+* Watara Supervision
 
 * Flip Clock (`armhf`) - Only for H700 devices currently
 
@@ -43,8 +70,8 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
 * ScummVM Libretro - Libretro Emulator
 
 * Sega Saturn - Both External and Libretro Emulators
-  * mednafen saturn
-  * yabasanshiro
-  * yabause
+  * Mednafen (Beetle) Saturn
+  * Yabasanshiro
+  * Yabause
 
 * Simple Terminal (`armhf`) - Only for H700 devices currently
