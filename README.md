@@ -1,12 +1,13 @@
 # muOS Extra Packages
-These packages are for the upcoming **Goose** release only.  Please do **NOT** install these on previous muOS versions or weird stuff may happen...
+These are additional packages you can download directly from the Release section and install via the **Archive Manager** to obtain additional applications and/or emulators for your muOS system. Most of them come with their appropriate launchers and BIOS packages built-in.
+##### _Please Note: These packages are for the upcoming **Goose** release only.  Please do **NOT** install these on previous muOS versions or weird stuff may happen..._
 ---
 ### Applications
 * Flip Clock (`armhf`) - Only for H700 devices currently
 * GMU Music Player (`armhf`) - Only for H700 devices currently
 * Simple Terminal (`armhf`) - Only for H700 devices currently
 ---
-### Arcade - MAME Neo Geo - Libretro Emulator
+### Arcade Specific - Libretro Emulator
 * FB Alpha 2012 CPS-1
 * FB Alpha 2012 CPS-2
 * FB Alpha 2012 CPS-3
@@ -60,6 +61,21 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
 * The 3DO Company - 3DO
 * VeMUlator
 * Watara Supervision
+---
+### Emulator Additions - Both External and Libretro Emulators
+* Handheld Electronic - Game and Watch
+* Nintendo DS
+* Nintendo Game Boy
+* Nintendo Game Boy Advance
+* Nintendo Game Boy Color
+* Nintendo N64
+* Nintendo NES - Famicom
+* Nintendo SNES-SFC
+* Quake
+* Sega Pico
+* Sega SG-1000
+* SNK Neo Geo
+* Sony PlayStation
 ---
 ### Engine and Runtime - Both External and Libretro Emulators
 * Arduboy
