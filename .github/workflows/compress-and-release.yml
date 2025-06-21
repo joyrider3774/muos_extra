@@ -1,4 +1,4 @@
-name: Manual Compress and Release MUXZIP
+name: Compress and Release
 
 on:
   workflow_dispatch:
@@ -23,11 +23,16 @@ jobs:
           for dir in */ ; do
             [ -d "$dir" ] || continue
             name="${dir%/}"
+            [ "$dir" = "artifacts/" ] && continue
             (
               cd "$dir" || exit 1
-              zip -r "../artifacts/${name}.zip" ./* || echo "Skipping empty dir: $dir"
+              if [ "$(find . -mindepth 1 | wc -l)" -gt 0 ]; then
+                zip -r "../artifacts/${name}.zip" ./*
+                [ -f "artifacts/${name}.zip" ] && mv "../artifacts/${name}.zip" "../artifacts/${name}.muxzip"
+              else
+                echo "Skipping empty directory: $dir"
+              fi
             )
-            [ -f "artifacts/${name}.zip" ] && mv "artifacts/${name}.zip" "artifacts/${name}.muxzip"
           done
 
       - name: Prevent accidental artifacts.muxzip
