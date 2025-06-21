@@ -2,12 +2,15 @@
 These are additional packages you can download directly from the Release section and install via the **Archive Manager** to obtain additional applications and/or emulators for your muOS system. Most of them come with their appropriate launchers and BIOS packages built-in.
 ##### _Please Note: These packages are for the upcoming **Goose** release only.  Please do **NOT** install these on previous muOS versions or weird stuff may happen..._
 ---
-### Applications
+## Applications
 * Flip Clock (`armhf`) - Only for H700 devices currently
+  * [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Flip.Clock.muxzip)
 * GMU Music Player (`armhf`) - Only for H700 devices currently
+  * [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/GMU.Music.Player.muxzip)
 * Simple Terminal (`armhf`) - Only for H700 devices currently
----
-### Arcade Specific - Libretro Emulator
+  * [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Simple.Terminal.muxzip)
+## Arcade Specific - Libretro Emulator
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Arcade.Specific.muxzip)
 * FB Alpha 2012 CPS-1
 * FB Alpha 2012 CPS-2
 * FB Alpha 2012 CPS-3
@@ -19,23 +22,23 @@ These are additional packages you can download directly from the Release section
 * MAME 2003 Plus
 * MAME 2010
 * MAME (current)
----
-### Atari - Libretro Emulator
+## Atari - Libretro Emulator
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Atari.muxzip)
 * 800 
 * 5200
 * 7800
 * Jaguar
 * ST-STE-TT-Falcon
----
-### Commodore - Libretro Emulator
+## Commodore - Libretro Emulator
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Commodore.muxzip)
 * Amiga (extra)
 * 64
 * 128
 * CBM-2
 * Pet
 * Vic-20
----
-### Console and Computer - Libretro Emulator
+## Console and Computer - Libretro Emulator
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Console.and.Computer.muxzip)
 * Amstrad
 * Bandai WonderSwan Color
 * ColecoVision
@@ -61,8 +64,8 @@ These are additional packages you can download directly from the Release section
 * The 3DO Company - 3DO
 * VeMUlator
 * Watara Supervision
----
-### Emulator Additions - Both External and Libretro Emulators
+## Emulator Additions - Both External and Libretro Emulators
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Emulator.Additions.muxzip)
 * Handheld Electronic - Game and Watch
 * Nintendo DS
 * Nintendo Game Boy
@@ -77,8 +80,8 @@ These are additional packages you can download directly from the Release section
 * Sega SG-1000
 * SNK Neo Geo
 * Sony PlayStation
----
-### Engine and Runtime - Both External and Libretro Emulators
+## Engine and Runtime - Both External and Libretro Emulators
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Engine.and.Runtime.muxzip)
 * Arduboy
 * ChaiLove
 * CHIP-8
@@ -92,22 +95,22 @@ These are additional packages you can download directly from the Release section
 * TIC-80
 * Uzebox
 * WASM-4
----
-### OpenBOR - External Emulator
+## OpenBOR - External Emulator
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/OpenBOR.muxzip)
 * v4432
 * v6412
 * v7142
 * v7530
----
-### ScummVM - Libretro Emulator
+## ScummVM - Libretro Emulator
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/ScummVM.muxzip)
 * Comes with pre-installed BIOS
----
-### Sega Saturn - Both External and Libretro Emulators
+## Sega Saturn - Both External and Libretro Emulators
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Sega.Saturn.muxzip)
 * Mednafen (Beetle) Saturn
 * Yabasanshiro
 * Yabause
----
-### Vircon32 Game Console
+## Vircon32 Game Console
+### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Vircon32.muxzip)
 * Uses Libretro core
 * Comes with 6 pre-installed games
   * Thanks to [Joyrider3774](https://joyrider3774.itch.io/)
