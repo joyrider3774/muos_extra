@@ -11,17 +11,19 @@ These are additional packages you can download directly from the Release section
   * [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Simple.Terminal.muxzip)
 ## Arcade Specific - Libretro Emulator
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Arcade.Specific.muxzip)
-* FB Alpha 2012 CPS-1
-* FB Alpha 2012 CPS-2
-* FB Alpha 2012 CPS-3
-* FB Alpha 2012 Neo Geo
-* MAME 078 Plus
-* MAME 139
-* MAME 2000
-* MAME 2003 Midway
-* MAME 2003 Plus
-* MAME 2010
-* MAME (current)
+| System | Cores |
+|--------|-------|
+| FB Alpha 2012 CPS-1 | `fbalpha2012_cps1_libretro.so` |
+| FB Alpha 2012 CPS-2 | `fbalpha2012_cps2_libretro.so` |
+| FB Alpha 2012 CPS-3 | `fbalpha2012_cps3_libretro.so` |
+| FB Alpha 2012 Neo Geo | `fbalpha2012_neogeo_libretro.so` |
+| MAME 078 Plus | `mame078plus_libretro.so` |
+| MAME 139 | `mame0139_libretro.so` |
+| MAME 2000 | `mame2000_libretro.so` |
+| MAME 2003 Midway | `mame2003_midway_libretro.so` |
+| MAME 2003 Plus | `mame2003_plus_libretro.so` |
+| MAME 2010 | `mame2010_libretro.so` |
+| MAME | `mame_libretro.so` |
 ## Atari - Libretro Emulator  
 [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Atari.muxzip)
 | System | Cores |
