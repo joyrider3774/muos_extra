@@ -22,13 +22,15 @@ These are additional packages you can download directly from the Release section
 * MAME 2003 Plus
 * MAME 2010
 * MAME (current)
-## Atari - Libretro Emulator
-### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Atari.muxzip)
-* 800 
-* 5200
-* 7800
-* Jaguar
-* ST-STE-TT-Falcon
+## Atari - Libretro Emulator  
+[Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Atari.muxzip)
+| System | Cores |
+|--------|-------|
+| Atari 800 | `atari800_libretro.so` |
+| Atari 5200 | `a5200_libretro.so`<br>`atari800_libretro.so`|
+| Atari 7800 | `prosystem_libretro.so` |
+| Atari Jaguar | `virtualjaguar_libretro.so` |
+| Atari ST/STE/TT/Falcon | `hatari_libretro.so`<br>`hatarib_libretro.so` |
 ## Commodore - Libretro Emulator
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Commodore.muxzip)
 * Amiga (extra)
