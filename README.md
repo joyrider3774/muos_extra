@@ -72,6 +72,7 @@ These are additional packages you can download directly from the Release section
 * Nintendo NES - Famicom
 * Nintendo SNES-SFC
 * Quake
+* Quake II
 * Sega Pico
 * Sega SG-1000
 * SNK Neo Geo
