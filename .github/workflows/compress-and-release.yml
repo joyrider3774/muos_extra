@@ -1,0 +1,34 @@
+name: Manual Compress and Release MUXZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  compress-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Compress contents of each top-level directory
+        run: |
+          mkdir -p artifacts
+          for dir in */ ; do
+            [ -d "$dir" ] || continue
+            name="${dir%/}"
+            (
+              cd "$dir" || exit 1
+              zip -r "../artifacts/${name}.zip" ./*
+            )
+            mv "artifacts/${name}.zip" "artifacts/${name}.muxzip"
+          done
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: "release-$(date +'%Y%m%d-%H%M%S')"
+          name: "Release - $(date +'%Y-%m-%d %H:%M:%S')"
+          files: artifacts/*.muxzip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
