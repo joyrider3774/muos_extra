@@ -30,6 +30,9 @@ jobs:
             [ -f "artifacts/${name}.zip" ] && mv "artifacts/${name}.zip" "artifacts/${name}.muxzip"
           done
 
+      - name: Prevent accidental artifacts.muxzip
+        run: rm -f artifacts.muxzip
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
