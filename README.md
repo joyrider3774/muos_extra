@@ -24,38 +24,53 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
 
 * Commodore - Libretro Emulator
   * Amiga (extra)
-  * c64
-  * c128
+  * 64
+  * 128
   * CBM-2
   * Pet
   * Vic-20
 
 * Console and Computer
-* Amstrad
-* Bandai WonderSwan Color
-* ColecoVision
-* Fairchild Channel F
-* Galaksija Retro Computer
-* GCE Vectrex
-* Magnavox Odyssey - VideoPac
-* Mattel Intellivision
-* Mega Duck - Cougar Boy
-* Microsoft MSX
-* NEC PC-8000 - PC-8800 Series
-* NEC PC98
-* NEC PC-FX
-* Nintendo Famicom Disk System
-* Nintendo Pokemon Mini
-* Philips CDi
-* Sharp X1
-* Sharp X68000
-* Sinclair ZX 81
-* Sinclair ZX Spectrum
-* SVI ColecoVision SG1000
-* Texas Instruments TI-83
-* The 3DO Company - 3DO
-* VeMUlator
-* Watara Supervision
+  * Amstrad
+  * Bandai WonderSwan Color
+  * ColecoVision
+  * Fairchild Channel F
+  * Galaksija Retro Computer
+  * GCE Vectrex
+  * Magnavox Odyssey - VideoPac
+  * Mattel Intellivision
+  * Mega Duck - Cougar Boy
+  * Microsoft MSX
+  * NEC PC-8000 - PC-8800 Series
+  * NEC PC98
+  * NEC PC-FX
+  * Nintendo Famicom Disk System
+  * Nintendo Pokemon Mini
+  * Philips CDi
+  * Sharp X1
+  * Sharp X68000
+  * Sinclair ZX 81
+  * Sinclair ZX Spectrum
+  * SVI ColecoVision SG1000
+  * Texas Instruments TI-83
+  * The 3DO Company - 3DO
+  * VeMUlator
+  * Watara Supervision
+
+* Engine and Runtime
+  * Arduboy
+  * ChaiLove
+  * CHIP-8
+  * Java J2ME
+  * Karaoke (CDG)
+  * LowRes NX
+  * Lua Engine
+  * Onscripter
+  * Pyxel
+  * RPG Maker 2000 - 2003
+  * TIC-80
+  * Uzebox
+  * WASM-4
 
 * Flip Clock (`armhf`) - Only for H700 devices currently
 
@@ -75,3 +90,4 @@ These packages are for the upcoming **Goose** release only.  Please do **NOT** i
   * Yabause
 
 * Simple Terminal (`armhf`) - Only for H700 devices currently
+
