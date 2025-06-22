@@ -21,6 +21,7 @@ launchers and BIOS packages built-in.
 
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Arcade.Specific.muxzip)
 
+* This is an add-on package containing extra emulators
 * Package comes with additional BIOS where required
 
 <details>
@@ -45,6 +46,7 @@ launchers and BIOS packages built-in.
 
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Atari.muxzip)
 
+* This is an add-on package containing extra emulators
 * Package comes with additional BIOS where required
 
 <details>
@@ -63,6 +65,7 @@ launchers and BIOS packages built-in.
 
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Commodore.muxzip)
 
+* This is an add-on package containing extra emulators
 * Package comes with additional BIOS where required
 
 <details>
@@ -82,6 +85,7 @@ launchers and BIOS packages built-in.
 
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Console.and.Computer.muxzip)
 
+* This is an add-on package containing extra emulators
 * Package comes with additional BIOS where required
 
 <details>
@@ -120,6 +124,7 @@ launchers and BIOS packages built-in.
 
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Emulator.Additions.muxzip)
 
+* This is an add-on package containing extra emulators
 * Package comes with additional BIOS where required
 
 <details>
@@ -147,6 +152,7 @@ launchers and BIOS packages built-in.
 
 ### [Download Latest Package](https://github.com/MustardOS/extra/releases/latest/download/Engine.and.Runtime.muxzip)
 
+* This is an add-on package containing extra emulators
 * Package comes with additional BIOS where required
 
 <details>
