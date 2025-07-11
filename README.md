@@ -95,6 +95,7 @@ launchers and BIOS packages built-in.
 | Amstrad                      | `crocods_libretro.so`<br>`cap32_libretro.so`                          |
 | Bandai WonderSwan Color      | `mednafen_wswan_libretro.so`                                          |
 | ColecoVision                 | `bluemsx_libretro.so`<br>`gearcoleco_libretro.so`                     |
+| Dragon and Tandy 8-bit       | `ext-xroar`                                                                |
 | Fairchild Channel F          | `freechaf_libretro.so`                                                |
 | Galaksija Retro Computer     | `galaksija_libretro.so`                                               |
 | GCE Vectrex                  | `vecx_libretro.so`                                                    |
