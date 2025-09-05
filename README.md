@@ -1,6 +1,6 @@
 # muOS Extra Packages
 
-These are additional systema and core packages that can be installed by the on-device **Core Downloader** mechanism.
+These are additional systems and core packages that can be installed by the on-device **Core Downloader** mechanism.
 
 ### _Please Note: These packages are for the **Goose** release only._
 
