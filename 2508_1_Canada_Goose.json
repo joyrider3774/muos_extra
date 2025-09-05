@@ -300,8 +300,8 @@
     "help": ""
   },
   {
-    "name": "Nintendo SNES-SFC",
-    "url": "https://github.com/MustardOS/extra/releases/latest/download/Nintendo.SNES-SFC.muxzip",
+    "name": "Nintendo SNES - SFC",
+    "url": "https://github.com/MustardOS/extra/releases/latest/download/Nintendo.SNES.-.SFC.muxzip",
     "type": "core",
     "help": ""
   },
@@ -360,8 +360,8 @@
     "help": ""
   },
   {
-    "name": "SEGA Saturn",
-    "url": "https://github.com/MustardOS/extra/releases/latest/download/SEGA.Saturn.muxzip",
+    "name": "Sega Saturn",
+    "url": "https://github.com/MustardOS/extra/releases/latest/download/Sega.Saturn.muxzip",
     "type": "core",
     "help": ""
   },
@@ -408,8 +408,8 @@
     "help": ""
   },
   {
-    "name": "SVI-ColecoVision-SG1000",
-    "url": "https://github.com/MustardOS/extra/releases/latest/download/SVI-ColecoVision-SG1000.muxzip",
+    "name": "SVI - ColecoVision - SG1000",
+    "url": "https://github.com/MustardOS/extra/releases/latest/download/SVI.-.ColecoVision.-.SG1000.muxzip",
     "type": "core",
     "help": ""
   },
