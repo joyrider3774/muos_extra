@@ -13,11 +13,12 @@ FILE=${3%/}
 	LOG_INFO "$0" 0 "FILE" "$FILE"
 ) &
 
+GPTOKEYB="/opt/muos/share/emulator/gptokeyb/gptokeyb2"
+XROAR_DIR="/opt/muos/share/emulator/xroar"
 
-GPTOKEYB="$(GET_VAR "device" "storage/rom/mount")/MUOS/emulator/gptokeyb/gptokeyb2"
-XROAR_DIR="$(GET_VAR "device" "storage/rom/mount")/MUOS/emulator/xroar"
 # Get the games's basename without the path
 GAME_BASENAME=$(basename "${FILE%.*}")
+
 # Construct the gptkfile by appending .gptk
 GPTK_FILE="${GAME_BASENAME}.gptk"
 export LD_LIBRARY_PATH="$XROAR_DIR/libs:$LD_LIBRARY_PATH"
@@ -39,12 +40,13 @@ fi
 
 /opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
 
-	if [ -f "$XROAR_DIR/gptk/${GPTK_FILE}" ]; then
-		$GPTOKEYB "xroar" -c "$XROAR_DIR/gptk/${GPTK_FILE}" &
-	else
-		$GPTOKEYB "xroar" -c "$XROAR_DIR/gptk/xroar.gptk" &
-	fi
-	$XROAR_DIR/xroar -c "$XROAR_DIR/xroar.conf" $MACHINE "$FILE"
+if [ -f "$XROAR_DIR/gptk/${GPTK_FILE}" ]; then
+	$GPTOKEYB "xroar" -c "$XROAR_DIR/gptk/${GPTK_FILE}" &
+else
+	$GPTOKEYB "xroar" -c "$XROAR_DIR/gptk/xroar.gptk" &
+fi
+
+$XROAR_DIR/xroar -c "$XROAR_DIR/xroar.conf" $MACHINE "$FILE"
 
 killall -q gptokeyb2
 

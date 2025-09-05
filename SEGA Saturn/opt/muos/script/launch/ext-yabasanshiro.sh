@@ -42,7 +42,7 @@ export SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED
 
 SET_VAR "system" "foreground_process" "yabasanshiro"
 
-EMUDIR="$(GET_VAR "device" "storage/rom/mount")/MUOS/emulator/yabasanshiro"
+EMUDIR="/opt/muos/share/yabasanshiro"
 export HOME="$EMUDIR"
 
 CONF_28XX="$EMUDIR/.yabasanshiro/28xx.config"

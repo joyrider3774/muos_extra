@@ -27,7 +27,7 @@ SETUP_SDL_ENVIRONMENT
 U_DATA="/userdata"
 
 [ -d "$U_DATA" ] && rm -rf "$U_DATA"
-ln -s "$(GET_VAR "device" "storage/rom/mount")/MUOS/emulator/openbor/userdata" "$U_DATA"
+ln -s "/opt/muos/share/openbor/userdata" "$U_DATA"
 
 if [ "$CORE" = "ext-openbor4432" ]; then
 	BOR_BIN="OpenBOR4432"
@@ -41,7 +41,7 @@ fi
 
 SET_VAR "system" "foreground_process" "$BOR_BIN"
 
-EMUDIR="$(GET_VAR "device" "storage/rom/mount")/MUOS/emulator/openbor"
+EMUDIR="/opt/muos/share/emulator/openbor"
 
 chmod +x "$EMUDIR"/"$BOR_BIN"
 cd "$EMUDIR" || exit 1
