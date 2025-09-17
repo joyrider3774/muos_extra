@@ -21,16 +21,10 @@ SETUP_SDL_ENVIRONMENT
 DRASTIC_BIN="drastic"
 SET_VAR "system" "foreground_process" "$DRASTIC_BIN"
 
-EMUDIR="/opt/muos/share/emulator/drastic-legacy"
+EMUDIR="$MUOS_SHARE_DIR/emulator/drastic-legacy"
 
 chmod +x "$EMUDIR"/$DRASTIC_BIN
 cd "$EMUDIR" || exit
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
-
-GPTOKEYB "$DRASTIC_BIN"
+GPTOKEYB "$DRASTIC_BIN" "$CORE"
 HOME="$EMUDIR" SDL_ASSERT=always_ignore ./$DRASTIC_BIN "$FILE"
-
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
-
-unset SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED

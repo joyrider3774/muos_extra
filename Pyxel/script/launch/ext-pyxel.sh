@@ -13,24 +13,15 @@ FILE=${3%/}
 	LOG_INFO "$0" 0 "FILE" "$FILE"
 ) &
 
-SETUP_SDL_ENVIRONMENT
-
 HOME="$(GET_VAR "device" "board/home")"
 export HOME
 
-if [ "$(GET_VAR "config" "boot/device_mode")" -eq 1 ]; then
-	SDL_HQ_SCALER=2
-	SDL_ROTATION=0
-	SDL_BLITTER_DISABLED=1
-else
-	SDL_HQ_SCALER="$(GET_VAR "device" "sdl/scaler")"
-	SDL_ROTATION="$(GET_VAR "device" "sdl/rotation")"
-	SDL_BLITTER_DISABLED="$(GET_VAR "device" "sdl/blitter_disabled")"
-fi
+SETUP_SDL_ENVIRONMENT
+
+SET_VAR "system" "foreground_process" "python3"
 
 SDL_JOYSTICK_DEVICE="/dev/input/js0"
-
-export SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED SDL_JOYSTICK_DEVICE
+export SDL_JOYSTICK_DEVICE
 
 # Check if "pyxel" is already installed
 if ! /usr/bin/python3 -c "import pyxel" 2>/dev/null; then
@@ -39,11 +30,4 @@ if ! /usr/bin/python3 -c "import pyxel" 2>/dev/null; then
 	/usr/bin/python3 -m pip install -U pyxel pip --user
 fi
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
-
 python3 -m pyxel play "$FILE"
-
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
-
-unset SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED
-

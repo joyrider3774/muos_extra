@@ -7,22 +7,14 @@ CORE=$2
 FILE=${3%/}
 
 (
-    LOG_INFO "$0" 0 "Content Launch" "DETAIL"
-    LOG_INFO "$0" 0 "NAME" "$NAME"
-    LOG_INFO "$0" 0 "CORE" "$CORE"
-    LOG_INFO "$0" 0 "FILE" "$FILE"
+	LOG_INFO "$0" 0 "Content Launch" "DETAIL"
+	LOG_INFO "$0" 0 "NAME" "$NAME"
+	LOG_INFO "$0" 0 "CORE" "$CORE"
+	LOG_INFO "$0" 0 "FILE" "$FILE"
 ) &
 
-PM_DIR="$(GET_VAR "device" "storage/rom/mount")/MUOS/PortMaster"
-ln -s "$PM_DIR/libinterpose.aarch64.so" "/usr/lib/libinterpose.aarch64.so" >/dev/null 2>&1
-GPTOKEYB="$PM_DIR"/gptokeyb2
-XROAR_DIR="/opt/muos/share/emulator/xroar"
-
-# Get the games's basename without the path
-GAME_BASENAME=$(basename "${FILE%.*}")
-
-# Construct the gptkfile by appending .gptk
-GPTK_FILE="${GAME_BASENAME}.gptk"
+XROAR_BIN="xroar"
+XROAR_DIR="$MUOS_SHARE_DIR/emulator/$XROAR_BIN"
 
 LD_LIBRARY_PATH="$XROAR_DIR/libs:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH
@@ -32,24 +24,20 @@ export HOME
 
 SETUP_SDL_ENVIRONMENT
 
-SET_VAR "system" "foreground_process" "xroar"
+SET_VAR "system" "foreground_process" "$XROAR_BIN"
 
 case "$CORE" in
-    xroar | ext-xroar) CORE="coco2bus" ;;
+	xroar | ext-xroar) CORE="coco2bus" ;;
 esac
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
-
 XR_GPTK="$XROAR_DIR/gptk"
-GPTK_SP="${XR_GPTK}/${GPTK_FILE}"
 
-[ ! -f "$GPTK_SP" ] && GPTK_SP="${XR_GPTK}/xroar.gptk"
-$GPTOKEYB "xroar" -c "$GPTK_SP" &
+GAME_BN=$(basename "${FILE%.*}")
+GPTK_SP="${XR_GPTK}/${GAME_BN}.gptk"
 
-$XROAR_DIR/xroar -c "$XROAR_DIR/xroar.conf" -default-machine "$CORE" "$FILE"
+[ ! -f "$GPTK_SP" ] && GPTK_SP="${XR_GPTK}/$XROAR_BIN.gptk"
 
-killall -q gptokeyb2
+PM_DIR="$(GET_VAR "device" "storage/rom/mount")/MUOS/PortMaster"
+"$PM_DIR"/gptokeyb2 "$XROAR_BIN" -c "$GPTK_SP" &
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
-
-unset SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED
+"$XROAR_DIR/$XROAR_BIN" -c "$XROAR_DIR/$XROAR_BIN.conf" -default-machine "$CORE" "$FILE"

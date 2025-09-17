@@ -8,7 +8,7 @@ FRONTEND stop
 
 echo "Restoring YabaSanshiro Controls"
 
-YABA_DIR="/opt/muos/share/emulator/yabasanshiro"
+YABA_DIR="$MUOS_SHARE_DIR/emulator/yabasanshiro"
 rm -f "${YABA_DIR}/.emulationstation/es_temporaryinput.cfg" "${YABA_DIR}/.yabasanshiro/keymapv2.json"
 
 /opt/muos/script/control/yabasanshiro.sh

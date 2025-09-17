@@ -27,7 +27,7 @@ SETUP_SDL_ENVIRONMENT
 U_DATA="/userdata"
 
 [ -d "$U_DATA" ] && rm -rf "$U_DATA"
-ln -s "/opt/muos/share/openbor/userdata" "$U_DATA"
+ln -s "$MUOS_SHARE_DIR/openbor/userdata" "$U_DATA"
 
 if [ "$CORE" = "ext-openbor4432" ]; then
 	BOR_BIN="OpenBOR4432"
@@ -41,18 +41,12 @@ fi
 
 SET_VAR "system" "foreground_process" "$BOR_BIN"
 
-EMUDIR="/opt/muos/share/emulator/openbor"
+EMUDIR="$MUOS_SHARE_DIR/emulator/openbor"
 
 chmod +x "$EMUDIR"/"$BOR_BIN"
 cd "$EMUDIR" || exit 1
-
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
 
 HOME="$EMUDIR" SDL_ASSERT=always_ignore ./"$BOR_BIN" "$FILE"
 
 # Clean up /userdata symlink when we're done since it's such a generic path.
 [ -d "$U_DATA" ] && rm -rf "$U_DATA"
-
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
-
-unset SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED

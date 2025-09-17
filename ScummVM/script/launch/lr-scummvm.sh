@@ -20,25 +20,16 @@ SETUP_SDL_ENVIRONMENT
 
 SET_VAR "system" "foreground_process" "retroarch"
 
-RA_CONF="/run/muos/storage/info/config/retroarch.cfg"
-CONFIGURE_RETROARCH "$RA_CONF"
+RA_ARGS=$(CONFIGURE_RETROARCH)
+IS_SWAP=$(DETECT_CONTROL_SWAP)
 
+SUBFOLDER="$NAME"
 F_PATH=$(echo "$FILE" | awk -F'/' '{NF--; print}' OFS='/')
-if [ -d "$F_PATH/.$NAME" ]; then
-	SUBFOLDER=".$NAME"
-else
-	SUBFOLDER="$NAME"
-fi
+[ -d "$F_PATH/.$NAME" ] && SUBFOLDER=".$NAME"
 
 SCVM="$F_PATH/$SUBFOLDER/$NAME.scummvm"
 cp "$F_PATH/$NAME.scummvm" "$SCVM"
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
+nice --20 retroarch -v -f $RA_ARGS -L "$MUOS_SHARE_DIR/core/scummvm_libretro.so" "$SCVM"
 
-nice --20 retroarch -v -f -c "$RA_CONF" -L "$(GET_VAR "device" "storage/rom/mount")/MUOS/core/scummvm_libretro.so" "$SCVM" &
-RA_PID=$!
-
-wait $RA_PID
-unset SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED
-
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
+[ "$IS_SWAP" -eq 1 ] && DETECT_CONTROL_SWAP

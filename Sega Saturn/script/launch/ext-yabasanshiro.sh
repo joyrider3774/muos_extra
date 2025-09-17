@@ -17,13 +17,7 @@ BIOS="/run/muos/storage/bios/saturn_bios.bin"
 SAVE_DIR="/run/muos/storage/save/file/YabaSanshiro-Ext"
 STATE_DIR="/run/muos/storage/save/state/YabaSanshiro-Ext"
 
-# Create save directories if absent
-if [ ! -d "$SAVE_DIR" ]; then
-	mkdir -p "$SAVE_DIR"
-fi
-if [ ! -d "$STATE_DIR" ]; then
-	mkdir -p "$STATE_DIR"
-fi
+mkdir -p "$STATE_DIR" "$SAVE_DIR"
 
 if [ "$CORE" = "ext-yabasanshiro-hle" ]; then
 	YABA_BIN="./yabasanshiro -r 3 -a -i"
@@ -35,14 +29,11 @@ fi
 
 CURR_CONSOLE="$(GET_VAR "device" "board/name")"
 
-SDL_HQ_SCALER="$(GET_VAR "device" "sdl/scaler")"
-SDL_ROTATION="$(GET_VAR "device" "sdl/rotation")"
-SDL_BLITTER_DISABLED=1
-export SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED
+SETUP_SDL_ENVIRONMENT skip_blitter
 
 SET_VAR "system" "foreground_process" "yabasanshiro"
 
-EMUDIR="/opt/muos/share/emulator/yabasanshiro"
+EMUDIR="$MUOS_SHARE_DIR/emulator/yabasanshiro"
 export HOME="$EMUDIR"
 
 CONF_28XX="$EMUDIR/.yabasanshiro/28xx.config"
@@ -74,18 +65,12 @@ chmod +x "$EMUDIR"/yabasanshiro
 
 cd "$EMUDIR" || exit
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
-
 export LD_LIBRARY_PATH="$EMUDIR/libsark:$LD_LIBRARY_PATH"
 
-SDL_GAMECONTROLLERCONFIG=$(grep "muOS-Keys" "/usr/lib/gamecontrollerdb.txt") SDL_ASSERT=always_ignore $YABA_BIN "$FILE"
+$YABA_BIN "$FILE"
 
 # Copy backup.bin to game specific save
 if [ -f "$SAVE_DIR/backup.bin" ]; then
 	cp -f "$SAVE_DIR/backup.bin" "$SAVE_DIR/$F_NAME.backup.bin"
 	rm -f "$SAVE_DIR/backup.bin"
 fi
-
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
-
-unset SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED
