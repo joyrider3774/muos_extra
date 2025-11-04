@@ -30,4 +30,8 @@ if ! /usr/bin/python3 -c "import pyxel" 2>/dev/null; then
 	/usr/bin/python3 -m pip install -U pyxel pip --user
 fi
 
+# add gptokeyb2 to exit games
+PM_DIR="$(GET_VAR "device" "storage/rom/mount")/MUOS/PortMaster"
+"$PM_DIR"/gptokeyb2 "python3" &
+
 python3 -m pyxel play "$FILE"
