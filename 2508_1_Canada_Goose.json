@@ -150,6 +150,12 @@
     "help": ""
   },
   {
+    "name": "Crisp Game Lib Portable",
+    "url": "https://github.com/MustardOS/extra/releases/latest/download/Crisp.Game.Lib.Portable.muxzip",
+    "type": "core",
+    "help": ""
+  },
+  {
     "name": "Discrete Integrated Circuit Emulator",
     "url": "https://github.com/MustardOS/extra/releases/latest/download/Discrete.Integrated.Circuit.Emulator.muxzip",
     "type": "core",
